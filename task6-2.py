@@ -36,3 +36,4 @@ print(f"[2.4]: Team in alphabetic order - {sorted_team}")
 print(f"[2.5]: Is Ivanov specifically in team? - {"yes" if "Ivanov" in sorted_team else "no"}{f"\n       Appears {sorted_team.count("Ivanov")} times" if "Ivanov" in sorted_team else ""}")
 
 #Ngl this task is stupid and has IMO wrong usage of tuples and needs to be redesigned
+

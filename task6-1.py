@@ -1,18 +1,17 @@
 import random
-
 total_numbers=5
 total_lives=20
 min_val=1
 max_val=100
-
 numbers_list=[]
+lives=total_lives
+guesses=[]
+
 for i in range(total_numbers):
     new_number = random.randint(min_val,max_val)
-    while new_number in numbers_list:
-        new_number = random.randint(min_val,max_val)
+    while new_number in numbers_list: new_number = random.randint(min_val,max_val)
     numbers_list.append(new_number)
 numbers_list.sort()
-
 numbers_list_copy=numbers_list.copy()
 
 print(f"There are [{total_numbers}] numbers between {min_val} and {max_val}. Guess them all. If you guess wrong you loose one of your {total_lives} lives!")
@@ -29,8 +28,6 @@ def get_hint():
     hint_string += "]"
     return f"{hint_string}"
 
-lives=total_lives
-guesses=[]
 while lives>0:
     user_input=0
     while True:

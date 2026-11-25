@@ -1,10 +1,9 @@
 import os
 import re
-from os import write
 
 global file
-
 invalid_characters=["/","\\",":","*","?","\"","<",">","|"]
+data = []
 
 def create_file(group_name:str):
     global file
@@ -17,9 +16,6 @@ def create_file(group_name:str):
         file=open(os.path.join(os.getcwd(),"task7data",group_name+".txt"),"w+",encoding="utf8")
     except IOError as e:
         print(f"Error: could not create file {group_name}.txt - error: {e}")
-
-
-
 def validate_input(user_input:str):
     email_str=None
     if user_input.count("|") == 1:
@@ -39,9 +35,6 @@ def validate_input(user_input:str):
         email_str = email_str.string.strip()
     data_entry=(name_str, email_str)
     return data_entry
-
-data = []
-
 def save_file():
     if len(data)==0:
         print("No entries to save")
@@ -51,7 +44,6 @@ def save_file():
     print("File saved")
     print(f"File data:\n{data_lines}")
     file.close()
-
 create_file(str(input("Enter the name of the group: ")))
 if file is not None:
     print("Enter student surname and email address separated by \"|\". Enter -1 to stop entering names and save the file")

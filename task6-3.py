@@ -30,3 +30,4 @@ precipitation_values = list(monthly_precipitation.values())
 precipitation_values.sort()
 precipitation_values =list(dict.fromkeys(precipitation_values))
 print(f"Monthly precipitation values from lowest to highest: {"".join(f"\n{", ".join(f"{month}" for month in flipped[value])}: {value}" for value in precipitation_values)}") #Second join handles the cases if several months have same value
+
